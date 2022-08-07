@@ -4,4 +4,8 @@ Repurposed code for the book, **TCP/IP Socket in C, Practical Guide for Programm
 # Purpose
 Self-study
 
-`code`
+---
+
+```
+std::cout << "hello world" << std::endl;
+```
