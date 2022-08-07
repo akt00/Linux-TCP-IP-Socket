@@ -6,6 +6,6 @@ Self-study
 
 ---
 
-```
+```rb
 std::cout << "hello world" << std::endl;
 ```
