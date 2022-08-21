@@ -33,7 +33,18 @@ vote_bin_len:
 	$(CC) Practical.c ./protocol/LengthFramer.c ./protocol/VoteEncodingBin.c ./protocol/VoteClientTCP.c -o VoteClientBinLen $(CFLAGS)
 	$(CC) Practical.c ./protocol/LengthFramer.c ./protocol/VoteEncodingBin.c ./protocol/VoteServerTCP.c -o VoteServerBinLen $(CFLAGS)
 
+sig:
+	$(CC) Practical.c ./async/SigAction.c -o SigAction $(CFLAGS)
+
+udp_async:
+	$(CC) Practical.c ./async/UDPEchoServer-SIGIO.c -o UDPEchoServer-SIGIO $(CFLAGS)
+	$(CC) Practical.c ./async/UDPEchoClient-Timeout.c -o UDPEchoClient-Timeout $(CFLAGS)
+
+select:
+	$(CC) Practical.c ./async/TCPEchoServer-Select.c -o TCPEchoServer-Select $(CFLAGS)
+
 clean:
 	rm -f main *.o TCPEchoClient4 TCPEchoServer4 TCPEchoClient TCPEchoServer\
 	UDPEchoClient UDPEchoServer BruteForceCoding VoteClientTxtDel VoteServerTxtDel \
 	VoteClientTxtLen VoteServerTxtLen VoteClientBinDel VoteServerBinDel VoteClientBinLen VoteServerBinLen\
+	SigAction UDPEchoServer-SIGIO UDPEchoClient-Timeout TCPEchoServer-Select
