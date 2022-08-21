@@ -4,7 +4,7 @@ Repurposed code for the book, **"TCP/IP Socket in C, Practical Guide for Program
 ## Purpose
 Self-study
 
-## Non-blocking IO
+## Multiplexing
 ### Select system call
   - each file descriptor needs to be rebuild every iteration
   - O(n)
@@ -23,10 +23,10 @@ Self-study
   - linux only implementation
   - level-triggered | edge-triggered
 
-### Edge-triggered interrupts 
+### Edge-triggered interrupts (non-blocking)
 One time event interrupt. Fires once only when the state changes.
 
-### Level-triggered interrupts
+### Level-triggered interrupts (blocking)
 Keeps interrupting the current work as long as the source of interrpt is asserted.
 
 ### [Reference](https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll/)
