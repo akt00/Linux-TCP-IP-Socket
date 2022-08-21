@@ -4,8 +4,6 @@ Repurposed code for the book, **"TCP/IP Socket in C, Practical Guide for Program
 ## Purpose
 Self-study
 
----
-
 ## Non-blocking IO
 ### Select system call
   - each file descriptor needs to be rebuild every iteration
