@@ -30,3 +30,6 @@ One time event interrupt. Fires once only when the state changes.
 Keeps interrupting the current work as long as the source of interrpt is asserted.
 
 ### [Reference](https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll/)
+
+
+# API References
