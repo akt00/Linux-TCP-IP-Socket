@@ -35,10 +35,16 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 # API References
 ## sys/socket.h
 ### int accept(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict addrlen)
-***sockfd*** : a socket file descriptor that is returned by socket() API.  
-***addr*** : a pointer to the object of either sockaddr_storage for dualstack or sockaddr_in for ipv4.  
+***sockfd*** : a socket file descriptor returned by socket().  
+***\*addr*** : a pointer to the object of either sockaddr_storage for dualstack or sockaddr_in for ipv4.  
 ***addrlen*** : the size of sockaddr_in for ipv4 or sockaddr_storage for dualstack.  
 ***return*** : On success, returns the file descriptor. -1 on failure and sets errno to indicate the error.  
+
+### int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
+***sockfd*** : a socket file descriptor returned by socket().
+***\*addr*** : sockaddr_in for ipv4 or a list of sockaddr objects stored in addrinfo. addrinfo can be obtained by getaddrinfo().
+***addrlen*** : the size of sockaddr_in for ivp4 or the socklen_t in addrinfo from getaddrinfo().
+***return*** 0 on success. -1 on failure. sets errno.
 
 ## sys/types.h
 ## netdb.h
