@@ -34,7 +34,7 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 
 # API References
 ## sys/socket.h
-### **int accept(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict addrlen)**
+### **int accept(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict addrlen)**  
 **sockfd** a socket file descriptor that is returned by socket() API.  
 **addr** a pointer to the object of either sockaddr_storage for dualstack or sockaddr_in for ipv4.  
 **addrlen** the size of sockaddr_in for ipv4 or sockaddr_storage for dualstack.  
