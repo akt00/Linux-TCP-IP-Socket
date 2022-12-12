@@ -40,5 +40,10 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ***addrlen*** : the size of sockaddr_in for ipv4 or sockaddr_storage for dualstack.  
 ***return*** : On success, returns the file descriptor. -1 on failure and sets errno to indicate the error.  
 
+## sys/types.h
+## netdb.h
+## unistd.h
+## sys/time.h
+#3 fcntl.h
 
 
