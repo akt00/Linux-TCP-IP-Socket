@@ -50,7 +50,7 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ***sockfd*** : a socket file descriptor returned by socket().  
 ***addr*** : sockaddr_in for ipv4 or a list of sockaddr objects stored in addrinfo.  
 ***addrlen*** : the size of a sockaddr_in object or ai_addrlen in addrinfo.  
-*** return*** 0 on success. -1 on failure. sets errno.
+***return*** 0 on success. -1 on failure. sets errno.
 
 ### int listen(int sockfd, int backlog)
 ***sockfd*** : a socket file descriptor returned by socket().  
