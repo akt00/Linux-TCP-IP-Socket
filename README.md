@@ -58,10 +58,10 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ***return*** : 0 on success. -1 on failure. sets errno.
 
 ### int socket(int domain, int type, int protocol)
-### int socket(int socket_family, int socket_type, int protocol)
-***socket_family*** : address family defined as enum.
-*** socket_type*** : L4 socket protocol type as enum
-*** protocol*** : usually IPPROTO_TCP or IPPROTO_UDP
+***domain*** : address family defined as enum.  
+***type*** : L4 socket protocol type as enum.  
+***protocol*** : usually IPPROTO_TCP or IPPROTO_UDP.  
+***return*** : 0 on success. -1 on failure. sets errno.
 
 
 ## sys/types.h
