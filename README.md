@@ -53,9 +53,9 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 *** return*** 0 on success. -1 on failure. sets errno.
 
 ### int listen(int sockfd, int backlog)
-***sockfd*** : a socket file descriptor returned by socket().
-***backlog*** : the maximum number of connection request allowed in the queue.
-***return*** : 0 on success. -1 on failure. sets errno.
+***sockfd*** : a socket file descriptor returned by socket().  
+***backlog*** : the maximum number of connection request allowed in the queue.  
+***return*** : 0 on success. -1 on failure. sets errno.  
 
 ### int socket(int domain, int type, int protocol)
 ***domain*** : address family defined as enum.  
