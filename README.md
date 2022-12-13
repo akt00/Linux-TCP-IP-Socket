@@ -44,7 +44,7 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ***sockfd*** : a socket file descriptor returned by socket().  
 ***\*addr*** : sockaddr_in for ipv4 or a list of sockaddr objects stored in addrinfo. addrinfo can be obtained by getaddrinfo().  
 ***addrlen*** : the size of sockaddr_in for ivp4 or the socklen_t in addrinfo from getaddrinfo().  
-***return*** 0 on success. -1 on failure. sets errno.
+***return*** : 0 on success. -1 on failure. sets errno.
 
 ### int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen_t addrlen)
 ***sockfd*** : a socket file descriptor returned by socket().  
