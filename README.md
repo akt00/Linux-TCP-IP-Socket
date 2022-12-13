@@ -38,13 +38,31 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ***sockfd*** : a socket file descriptor returned by socket().  
 ***\*addr*** : a pointer to the object of either sockaddr_storage for dualstack or sockaddr_in for ipv4.  
 ***addrlen*** : the size of sockaddr_in for ipv4 or sockaddr_storage for dualstack.  
-***return*** : On success, returns the file descriptor. -1 on failure and sets errno to indicate the error.  
+***return*** : On success, returns the file descriptor. -1 on failure and sets errno.
 
 ### int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
 ***sockfd*** : a socket file descriptor returned by socket().  
 ***\*addr*** : sockaddr_in for ipv4 or a list of sockaddr objects stored in addrinfo. addrinfo can be obtained by getaddrinfo().  
 ***addrlen*** : the size of sockaddr_in for ivp4 or the socklen_t in addrinfo from getaddrinfo().  
 ***return*** 0 on success. -1 on failure. sets errno.  
+
+### int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen_t addrlen)
+***sockfd*** : a socket file descriptor returned by socket().
+***addr*** : sockaddr_in for ipv4 or a list of sockaddr objects stored in addrinfo.
+***addrlen*** : the size of a sockaddr_in object or ai_addrlen in addrinfo.
+*** return*** 0 on success. -1 on failure. sets errno.
+
+### int listen(int sockfd, int backlog)
+***sockfd*** : a socket file descriptor returned by socket().
+***backlog*** : the maximum number of connection request allowed in the queue.
+***return*** : 0 on success. -1 on failure. sets errno.
+
+### int socket(int domain, int type, int protocol)
+### int socket(int socket_family, int socket_type, int protocol)
+***socket_family*** : address family defined as enum.
+*** socket_type*** : L4 socket protocol type as enum
+*** protocol*** : usually IPPROTO_TCP or IPPROTO_UDP
+
 
 ## sys/types.h
 ## netdb.h
