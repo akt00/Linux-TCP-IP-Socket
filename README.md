@@ -67,10 +67,16 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ### ssize_t recv(int sockfd, void *buf, size_t len, int flags)
 This function copies a TCP message to buf.  
 ***sockfd*** : a file descriptor returned by socket()  
-****buf*** : a pointer to a byte buffer array. the optimal buffer size depends on the application protocol. This should be large enough to hold the maximums size of the TCP protocol message.  
+***\*buf*** : a pointer to a byte buffer array. the optimal buffer size depends on the application protocol. This should be large enough to hold the maximums size of the TCP protocol message.  
 ***len*** : the size of the buf array.  
 ***flags*** : flag options. set to 0 for no options.  
-***return*** : returns the size of the message receieved and set ssize_t value to 0 if no more TCP message.  
+***return*** : returns the size of the message receieved and set ssize_t value to 0 if no more TCP message. 
+
+### ssize_t send(int sockfd, const void *buf, size_t len, int flags)
+***sockfd*** : a file descriptor returned by socket()  
+***\*buf*** : a pointer to a byte array buffer that holds the message to send.  
+***len*** : the size of buf.  
+***flags*** : flag options. set to 0 if no flag options.  
 
 ## sys/types.h
 ## netdb.h
