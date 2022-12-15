@@ -35,26 +35,28 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 # API References
 ## sys/socket.h
 ### int accept(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict addrlen)
-This function is for TCP connection
-***sockfd*** : a socket file descriptor returned by socket().  
-***\*addr*** : a pointer to the object of either sockaddr_storage for dualstack or sockaddr_in for ipv4.  
+This function is for TCP connection only.
+***sockfd*** : a server socket file descriptor returned by socket().  
+***\*addr*** : a pointer to the client object of either sockaddr_storage for dualstack or sockaddr_in for ipv4.  
 ***addrlen*** : the size of sockaddr_in for ipv4 or sockaddr_storage for dualstack.  
 ***return*** : On success, returns the file descriptor for the socket for client connection. -1 on failure and sets errno.
 
 ### int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
-***sockfd*** : a socket file descriptor returned by socket().  
+***sockfd*** : a server socket file descriptor returned by socket().  
 ***\*addr*** : sockaddr_in for ipv4 or a list of sockaddr objects stored in addrinfo. addrinfo can be obtained by getaddrinfo().  
 ***addrlen*** : the size of sockaddr_in for ivp4 or the socklen_t in addrinfo from getaddrinfo().  
 ***return*** : 0 on success. -1 on failure. sets errno.
 
 ### int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen_t addrlen)
+This function is for TCP only.  
 ***sockfd*** : a socket file descriptor returned by socket().  
 ***addr*** : sockaddr_in for ipv4 or a list of sockaddr objects stored in addrinfo.  
 ***addrlen*** : the size of a sockaddr_in object or ai_addrlen in addrinfo.  
 ***return*** 0 on success. -1 on failure. sets errno.
 
 ### int listen(int sockfd, int backlog)
-***sockfd*** : a socket file descriptor returned by socket().  
+This function is for TCP only.
+***sockfd*** : a server socket file descriptor returned by socket().  
 ***backlog*** : the maximum number of connection request allowed in the queue.  
 ***return*** : 0 on success. -1 on failure. sets errno.  
 
