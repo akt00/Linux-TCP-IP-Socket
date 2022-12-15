@@ -35,10 +35,11 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 # API References
 ## sys/socket.h
 ### int accept(int sockfd, struct sockaddr *restrict addr, socklen_t *restrict addrlen)
+This function is for TCP connection
 ***sockfd*** : a socket file descriptor returned by socket().  
 ***\*addr*** : a pointer to the object of either sockaddr_storage for dualstack or sockaddr_in for ipv4.  
 ***addrlen*** : the size of sockaddr_in for ipv4 or sockaddr_storage for dualstack.  
-***return*** : On success, returns the file descriptor. -1 on failure and sets errno.
+***return*** : On success, returns the file descriptor for the socket for client connection. -1 on failure and sets errno.
 
 ### int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
 ***sockfd*** : a socket file descriptor returned by socket().  
@@ -66,14 +67,15 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 
 ### ssize_t recv(int sockfd, void *buf, size_t len, int flags)
 This function copies a TCP message to buf.  
-***sockfd*** : a file descriptor returned by socket()  
+***sockfd*** : a file descriptor returned by accept()  
 ***\*buf*** : a pointer to a byte buffer array. the optimal buffer size depends on the application protocol. This should be large enough to hold the maximums size of the TCP protocol message.  
 ***len*** : the size of the buf array.  
 ***flags*** : flag options. set to 0 for no options.  
 ***return*** : returns the size of the message receieved and set ssize_t value to 0 if no more TCP message. 
 
 ### ssize_t send(int sockfd, const void *buf, size_t len, int flags)
-***sockfd*** : a file descriptor returned by socket()  
+This function sends a TCP packet to a client.  
+***sockfd*** : a file descriptor returned by accept()  
 ***\*buf*** : a pointer to a byte array buffer that holds the message to send.  
 ***len*** : the size of buf.  
 ***flags*** : flag options. set to 0 if no flag options.  
