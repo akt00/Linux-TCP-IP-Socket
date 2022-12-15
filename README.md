@@ -64,6 +64,14 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ***return*** : 0 on success. -1 on failure. sets errno.
 
 
+### ssize_t recv(int sockfd, void *buf, size_t len, int flags)
+This function copies a TCP message to buf. 
+***sockfd*** : a file descriptor returned by socket()
+****buf*** : a pointer to a byte buffer array. the optimal buffer size depends on the application protocol. This should be large enough to hold the maximums size of the TCP protocol message.
+***len*** : the size of the buf array.
+***flags*** : flag options. set to 0 for no options.
+***return*** : returns the size of the message receieved and set ssize_t value to 0 if no more TCP message.
+
 ## sys/types.h
 ## netdb.h
 ## unistd.h
