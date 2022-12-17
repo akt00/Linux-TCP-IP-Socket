@@ -29,7 +29,8 @@ One time event interrupt. Fires once only when the state changes.
 ### Level-triggered interrupts (blocking)
 Keeps interrupting the current work as long as the source of interrpt is asserted.
 
-### [Reference](https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll/)
+### [Reference1](https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll/)
+### [Reference2](https://eklitzke.org/blocking-io-nonblocking-io-and-epoll)
 
 
 # API References
