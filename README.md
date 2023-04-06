@@ -32,6 +32,12 @@ Keeps interrupting the current work as long as the source of interrpt is asserte
 ### [Reference1](https://devarea.com/linux-io-multiplexing-select-vs-poll-vs-epoll/)
 ### [Reference2](https://eklitzke.org/blocking-io-nonblocking-io-and-epoll)
 
+## Message Enconding methods
+Both use network byte order (big endian)
+### Text based encoding
+prefix text length + payload
+### Binary based encoding
+magic number + miscellaneous fileds + payload
 
 # API References
 ## sys/socket.h
@@ -82,11 +88,4 @@ This function sends a TCP packet to a client.
 ***\*buf*** : a pointer to a byte array buffer that holds the message to send.  
 ***len*** : the size of buf.  
 ***flags*** : flag options. set to 0 if no flag options.  
-
-## sys/types.h
-## netdb.h
-## unistd.h
-## sys/time.h
-## fcntl.h
-
 
